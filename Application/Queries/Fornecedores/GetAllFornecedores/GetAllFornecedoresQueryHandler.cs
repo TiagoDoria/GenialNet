@@ -3,7 +3,7 @@ using AutoMapper;
 using Domain.Repositories.Fornecedores;
 using MediatR;
 
-namespace Application.Queries.GetAllFornecedores
+namespace Application.Queries.Fornecedores.GetAllFornecedores
 {
     public class GetAllFornecedoresQueryHandler : IRequestHandler<GetAllFornecedoresQuery, IEnumerable<FornecedorDTO>>
     {

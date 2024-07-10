@@ -9,5 +9,6 @@ namespace Domain.Repositories.Fornecedores
         Task<Fornecedor> AddAsync(Fornecedor entity);
         Task<Fornecedor> UpdateAsync(Fornecedor entity);
         Task<bool> DeleteAsync(Guid id);
+        Task<bool> FindByCnpjAsync(string cnpj);
     }
 }

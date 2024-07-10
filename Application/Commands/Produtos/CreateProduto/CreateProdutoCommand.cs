@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.DTOs.Produtos;
 
 namespace Application.Commands.Produtos.CreateProduto
 {
-    public class CreateProdutoCommand
+    public class CreateProdutoCommand : IRequest<Produto>
     {
+        public ProdutoDTO Produto { get; set; }
+
+        public CreateProdutoCommand(ProdutoDTO _produto)
+        {
+            Produto = _produto;
+        }
     }
 }

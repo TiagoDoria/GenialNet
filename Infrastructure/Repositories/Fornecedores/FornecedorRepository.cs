@@ -59,6 +59,11 @@ namespace Infrastructure.Repositories.Fornecedores
             return fornecedor;
         }
 
+        public async Task<bool> FindByCnpjAsync(string cnpj)
+        {                   
+            return await _context.Fornecedores.AnyAsync(x => x.Cnpj == cnpj);
+        }
+
         public async Task<Fornecedor> UpdateAsync(Fornecedor entity)
         {
             _context.Fornecedores.Update(entity);

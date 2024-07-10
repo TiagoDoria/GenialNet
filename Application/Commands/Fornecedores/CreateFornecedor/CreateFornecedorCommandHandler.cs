@@ -26,10 +26,17 @@ namespace Application.Commands.Fornecedores.CreateFornecedor
             {
                 var fornecedorDto = request.Fornecedor;
 
-                if (!Validations.ValidarCnpj(fornecedorDto.Cnpj))
-                {
-                    throw new Exception("CNPJ inválido!");
-                }
+                await ValidarFornecedor.ValidarFornecedorAsync(fornecedorDto);
+
+                //if (!Validations.ValidarCnpj(fornecedorDto.Cnpj))
+                //{
+                //    throw new Exception("CNPJ inválido!");
+                //}
+
+                //if(await _repository.Fornecedores.FindByCnpjAsync(fornecedorDto.Cnpj))
+                //{
+                //    throw new Exception("Fornecedor já cadastrado!");
+                //}
 
                 fornecedorDto.Endereco = await _viaCepService.GetEnderecoByCepAsync(fornecedorDto.Endereco.Cep);
 

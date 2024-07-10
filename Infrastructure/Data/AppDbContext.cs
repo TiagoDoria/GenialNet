@@ -15,7 +15,9 @@ namespace Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-           
+            modelBuilder.Entity<Fornecedor>()
+                .HasIndex(e => e.Cnpj)
+                .IsUnique();
         }
 
     }

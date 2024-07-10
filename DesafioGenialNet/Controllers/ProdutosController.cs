@@ -36,6 +36,14 @@ namespace DesafioGenialNet.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<ActionResult<List<ProdutoDTO>>> GetAllAsync()
+        {
+            var query = new GetAllProdutosQuery();
+            var result = await _mediator.Send(query);
+            return Ok(result);
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<ProdutoDTO>> FindByIdAsync(Guid id)
         {
