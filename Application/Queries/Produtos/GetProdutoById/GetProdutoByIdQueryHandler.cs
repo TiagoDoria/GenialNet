@@ -1,11 +1,7 @@
-﻿using Application.DTOs.Fornecedores;
-using Application.DTOs.Produtos;
-using Application.Queries.Fornecedores.GetFornecedorById;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.DTOs.Produtos;
+using AutoMapper;
+using Domain.Repositories.Produtos;
+using MediatR;
 
 namespace Application.Queries.Produtos.GetProdutoById
 {

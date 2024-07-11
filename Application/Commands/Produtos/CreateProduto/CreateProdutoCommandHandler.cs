@@ -1,11 +1,8 @@
-﻿using Application.Commands.Fornecedores.CreateFornecedor;
-using Application.Services;
-using Application.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.DTOs.Produtos;
+using AutoMapper;
+using Domain.Models.Produtos;
+using Domain.Repositories.Produtos;
+using MediatR;
 
 namespace Application.Commands.Produtos.CreateProduto
 {
@@ -20,11 +17,21 @@ namespace Application.Commands.Produtos.CreateProduto
             _mapper = mapper;
         }
 
+        private async Task ValidarProdutoAsync(ProdutoDTO produtoDto)
+        {
+            if (await _repository.FindAsync(produtoDto.Descricao, produtoDto.Marca))
+            {
+                throw new Exception("Produto já cadastrado!");
+            }
+        }
+
         public async Task<Produto> Handle(CreateProdutoCommand request, CancellationToken cancellationToken)
         {
             try
             {
-                var produtoDto = request.Produto;   
+                var produtoDto = request.Produto;
+
+                await ValidarProdutoAsync(produtoDto);
 
                 var produto = _mapper.Map<Produto>(produtoDto);
 

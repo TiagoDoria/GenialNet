@@ -1,13 +1,9 @@
 ﻿using Application.DTOs.Fornecedores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Domain.Repositories.Fornecedores;
 
 namespace Application.Utils
 {
-    public static class ValidarFornecedor
+    public class ValidarFornecedor
     {
         private readonly IFornecedorRepository _fornecedorRepository;
 
@@ -16,17 +12,19 @@ namespace Application.Utils
             _fornecedorRepository = fornecedorRepository;
         }
 
-        public async static Task ValidarFornecedorAsync(FornecedorDto fornecedorDto)
+        public async Task<bool> ValidarFornecedorAsync(FornecedorDTO fornecedorDto)
         {
             if (!Validations.ValidarCnpj(fornecedorDto.Cnpj))
             {
-                throw new ValidationException("CNPJ inválido!");
+                throw new Exception("CNPJ inválido!");
             }
 
             if (await _fornecedorRepository.FindByCnpjAsync(fornecedorDto.Cnpj))
             {
-                throw new ValidationException("Fornecedor já cadastrado!");
+                throw new Exception("Fornecedor já cadastrado!");
             }
+
+            return true;
         }
     }
 }

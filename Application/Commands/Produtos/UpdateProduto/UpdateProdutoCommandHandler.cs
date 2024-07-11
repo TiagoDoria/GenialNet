@@ -1,10 +1,8 @@
-﻿using Application.Commands.Fornecedores.UpdateFornecedor;
-using Application.DTOs.Fornecedores;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Application.DTOs.Produtos;
+using AutoMapper;
+using Domain.Models.Produtos;
+using Domain.Repositories.Produtos;
+using MediatR;
 
 namespace Application.Commands.Produtos.UpdateProduto
 {

@@ -1,4 +1,9 @@
-﻿using Application.DTOs.Produtos;
+﻿using Application.Commands.Produtos.CreateProduto;
+using Application.Commands.Produtos.DeleteProduto;
+using Application.Commands.Produtos.UpdateProduto;
+using Application.DTOs.Produtos;
+using Application.Queries.Produtos.GetAllProdutos;
+using Application.Queries.Produtos.GetProdutoById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -59,12 +64,13 @@ namespace DesafioGenialNet.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<IActionResult>> Update([FromBody] ProdutoEditDTO produtoDto)
+        public async Task<IActionResult> Update([FromBody] ProdutoEditDTO produtoDto)
         {
             try
             {
                 if (produtoDto == null) return BadRequest();
-                var command = await _mediator.Send(produtoDto);
+                var command = new UpdateProdutoCommand(produtoDto);
+                await _mediator.Send(command);
                 return Ok(command);
             }
             catch (Exception e)

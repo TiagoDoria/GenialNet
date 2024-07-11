@@ -9,5 +9,6 @@
         public string Bairro { get; set; }
         public string Localidade { get; set; }
         public string Uf { get; set; }
+        public Guid FornecedorId { get; set; }
     }
 }

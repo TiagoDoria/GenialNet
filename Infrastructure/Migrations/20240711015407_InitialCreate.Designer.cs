@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240710012908_InitialCreate")]
+    [Migration("20240711015407_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -43,6 +43,9 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("FornecedorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Localidade")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -57,6 +60,9 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FornecedorId")
+                        .IsUnique();
+
                     b.ToTable("Endereco");
                 });
 
@@ -68,10 +74,7 @@ namespace Infrastructure.Migrations
 
                     b.Property<string>("Cnpj")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("EnderecoId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -83,7 +86,8 @@ namespace Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EnderecoId");
+                    b.HasIndex("Cnpj")
+                        .IsUnique();
 
                     b.ToTable("Fornecedores");
                 });
@@ -105,9 +109,11 @@ namespace Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Medida")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("Preco")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("UnidadeDeMedida")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -116,15 +122,13 @@ namespace Infrastructure.Migrations
                     b.ToTable("Produtos");
                 });
 
-            modelBuilder.Entity("Domain.Models.Fornecedores.Fornecedor", b =>
+            modelBuilder.Entity("Domain.Models.Fornecedores.Endereco", b =>
                 {
-                    b.HasOne("Domain.Models.Fornecedores.Endereco", "Endereco")
-                        .WithMany()
-                        .HasForeignKey("EnderecoId")
+                    b.HasOne("Domain.Models.Fornecedores.Fornecedor", null)
+                        .WithOne("Endereco")
+                        .HasForeignKey("Domain.Models.Fornecedores.Endereco", "FornecedorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Endereco");
                 });
 
             modelBuilder.Entity("Domain.Models.Produtos.Produto", b =>
@@ -138,6 +142,9 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Domain.Models.Fornecedores.Fornecedor", b =>
                 {
+                    b.Navigation("Endereco")
+                        .IsRequired();
+
                     b.Navigation("Produtos");
                 });
 #pragma warning restore 612, 618

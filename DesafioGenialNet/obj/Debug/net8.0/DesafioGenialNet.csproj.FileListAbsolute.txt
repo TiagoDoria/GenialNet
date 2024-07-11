@@ -51,7 +51,6 @@ C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\System
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\System.Runtime.Caching.dll
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\System.Security.Permissions.dll
-C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\System.Windows.Extensions.dll
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -128,7 +127,6 @@ C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\Desafi
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\DesafioGenialNet.AssemblyInfoInputs.cache
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\DesafioGenialNet.AssemblyInfo.cs
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\DesafioGenialNet.csproj.CoreCompileInputs.cache
-C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\DesafioGenialNet.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\DesafioGenialNet.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\staticwebassets.development.json
@@ -146,3 +144,4 @@ C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\Desafi
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\ref\DesafioGenialNet.dll
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\MediatR.Extensions.dll
 C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\tiago\Desktop\DesafioGenialNet\DesafioGenialNet\obj\Debug\net8.0\DesafioGenialNet.sourcelink.json

@@ -10,7 +10,11 @@ namespace Domain.Models.Produtos
         [Required]
         public string Marca { get; set; }
         [Required]
-        public string Medida { get; set; }
+        [EnumDataType(typeof(UnidadeDeMedida), ErrorMessage = "O valor deve ser 'Unidade', 'Quilograma' ou 'Metro'.")]
+        public UnidadeDeMedida UnidadeDeMedida { get; set; }
+        [Required]
+        public decimal Preco { get; set; }
+        [Required]
         public Guid FornecedorId { get; set; }
     }
 }

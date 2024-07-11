@@ -1,9 +1,5 @@
-﻿using Application.Commands.Fornecedores.DeleteFornecedor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Repositories.Produtos;
+using MediatR;
 
 namespace Application.Commands.Produtos.DeleteProduto
 {

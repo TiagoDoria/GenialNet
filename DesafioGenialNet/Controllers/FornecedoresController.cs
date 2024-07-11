@@ -1,7 +1,9 @@
 using Application.Commands.Fornecedores.CreateFornecedor;
 using Application.Commands.Fornecedores.DeleteFornecedor;
+using Application.Commands.Fornecedores.UpdateFornecedor;
 using Application.DTOs.Fornecedores;
-using Application.Queries.GetFornecedorById;
+using Application.Queries.Fornecedores.GetAllFornecedores;
+using Application.Queries.Fornecedores.GetFornecedorById;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,7 +33,7 @@ namespace DesafioGenialNet.Controllers
 
                 var command = new CreateFornecedorCommand(fornecedorDto);
                 await _mediator.Send(command);
-                return Ok();
+                return Ok(fornecedorDto);
             }
             catch (Exception ex)
             {
@@ -62,13 +64,14 @@ namespace DesafioGenialNet.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<IActionResult>> Update([FromBody] FornecedorEditDTO fornecedorDto)
+        public async Task<IActionResult> Update([FromBody] FornecedorEditDTO fornecedorDto)
         {
             try
             {
                 if (fornecedorDto == null) return BadRequest();
-                var command = await _mediator.Send(fornecedorDto);
-                return Ok(command);
+                var command = new UpdateFornecedorCommand(fornecedorDto);
+                await _mediator.Send(command);
+                return Ok(fornecedorDto);
             }
             catch (Exception e)
             {

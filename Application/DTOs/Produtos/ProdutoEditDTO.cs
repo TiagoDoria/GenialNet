@@ -5,6 +5,8 @@
         public Guid Id { get; set; }
         public string Descricao { get; set; }
         public string Marca { get; set; }
-        public string Medida { get; set; }
+        public decimal Preco { get; set; }
+        public UnidadeDeMedidaDTO UnidadeDeMedida { get; set; }
+        public Guid FornecedorId { get; set; }
     }
 }

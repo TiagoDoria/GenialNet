@@ -54,6 +54,11 @@ namespace Infrastructure.Repositories.Produtos
             return produto;
         }
 
+        public async Task<bool> FindAsync(string nome, string marca)
+        {
+            return await _context.Produtos.AnyAsync(x => x.Descricao == nome && x.Marca == marca);
+        }
+
         public async Task<Produto> UpdateAsync(Produto entity)
         {
             _context.Produtos.Update(entity);

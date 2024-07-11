@@ -10,8 +10,10 @@ namespace Domain.Models.Fornecedores
         [Required]
         public string Nome { get; set; }
         [Required]
+        [RegularExpression(@"\d{14}", ErrorMessage = "CNPJ inválido")]
         public string Cnpj { get; set; }
         [Required]
+        [RegularExpression(@"\d{10,11}", ErrorMessage = "Telefone inválido")]
         public string Telefone { get; set; }
         public Endereco Endereco { get; set; }
         public Collection<Produto> Produtos { get; set; }

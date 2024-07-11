@@ -9,5 +9,6 @@ namespace Domain.Repositories.Produtos
         Task<Produto> AddAsync(Produto entity);
         Task<Produto> UpdateAsync(Produto entity);
         Task<bool> DeleteAsync(Guid id);
+        Task<bool> FindAsync(string nome, string marca);
     }
 }
