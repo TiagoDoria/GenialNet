@@ -1,5 +1,5 @@
 ## Adicionar migrations
-Add-Migration InitialCreate -StartupProject DesafioGenialNet -Project Infrastructure
+PM > Add-Migration InitialCreate -StartupProject DesafioGenialNet -Project Infrastructure
 
 ## Executar migrations
 update-database
