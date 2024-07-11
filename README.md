@@ -10,3 +10,8 @@ genialnet
 ## Estrutura e tecnologias
 O projeto foi desenvolvido utilizando .NET Core 8, SQL Server, CQRS - Mediatr, Entity Framework. Utilizando o padrão DDD, sendo dividido em: Domain, Application, Infrastructure e a API.
 
+## Unidades de Medida
+
+  Unidade = 0
+  Quilograma = 1
+  Metro = 2
