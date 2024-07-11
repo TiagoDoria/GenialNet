@@ -20,7 +20,6 @@ O projeto foi desenvolvido utilizando .NET Core 8, SQL Server, CQRS - Mediatr, E
 
 {
   "Fornecedor": {
-    "Id": "uuid-fornecedor",
     "Nome": "Fornecedor Exemplo",
     "Cnpj": "12345678000123",
     "Telefone": "1234567890",
@@ -36,7 +35,6 @@ O projeto foi desenvolvido utilizando .NET Core 8, SQL Server, CQRS - Mediatr, E
     },
     "Produtos": [
       {
-        "Id": "uuid-produto1",
         "Descricao": "Produto Exemplo 1",
         "Marca": "Marca Exemplo",
         "UnidadeDeMedida": "Unidade",
@@ -44,7 +42,6 @@ O projeto foi desenvolvido utilizando .NET Core 8, SQL Server, CQRS - Mediatr, E
         "FornecedorId": "uuid-fornecedor"
       },
       {
-        "Id": "uuid-produto2",
         "Descricao": "Produto Exemplo 2",
         "Marca": "Marca Exemplo",
         "UnidadeDeMedida": "Quilograma",
